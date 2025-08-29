@@ -1,0 +1,2 @@
+IntStream.rangeClosed(1, columnCount)
+    .forEach(i -> values.add(queryResult.getString(i)));

@@ -1,0 +1,1 @@
+IntStream.range(0, 5).forEach(i -> assertEquals(11 + i * 2, statement.generateDuration(context)));

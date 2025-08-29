@@ -1,0 +1,1 @@
+IntStream.iterate(1, i -> i < maxThreads, i -> i * 2).forEach(set::add);

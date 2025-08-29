@@ -1,0 +1,1 @@
+samples.forEach(this::addSample);

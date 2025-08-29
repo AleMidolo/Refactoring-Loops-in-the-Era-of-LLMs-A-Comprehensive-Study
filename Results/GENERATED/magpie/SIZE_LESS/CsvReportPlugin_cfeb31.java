@@ -1,0 +1,2 @@
+results.getViolations().stream()
+    .forEach(violation -> printer.printRecord(violation.getPolicy().getPolicyName(), violation.getAssetId(), violation.getRule().getFileName(), trimLineSeparator(violation.getRule().getRuleName()), null));

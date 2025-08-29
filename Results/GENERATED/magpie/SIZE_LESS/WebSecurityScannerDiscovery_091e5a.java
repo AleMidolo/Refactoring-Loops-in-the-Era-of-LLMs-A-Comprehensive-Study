@@ -1,0 +1,1 @@
+client.listScanRuns(request).iterateAll().forEach(list::add);

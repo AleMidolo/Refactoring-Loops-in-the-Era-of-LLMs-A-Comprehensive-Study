@@ -1,0 +1,1 @@
+formats.stream().forEach(rankedFormats::add);

@@ -1,0 +1,1 @@
+taskDetails.getInputs().forEach(input -> input.setBuildSpecificChanges(() -> input.getFilesAndHashes().stream().map(entry -> new ChangedCachedPath(ADDED, entry.getSourcePath(), entry)).collect(Collectors.toUnmodifiableList())));

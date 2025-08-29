@@ -1,0 +1,1 @@
+IntStream.range(0, cells.length).forEach(i -> instance.put(header[i], cells[i]));

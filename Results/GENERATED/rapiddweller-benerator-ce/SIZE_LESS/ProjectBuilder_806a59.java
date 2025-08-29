@@ -1,0 +1,1 @@
+type.getDetails().forEach(detail -> format(detail, attributes));

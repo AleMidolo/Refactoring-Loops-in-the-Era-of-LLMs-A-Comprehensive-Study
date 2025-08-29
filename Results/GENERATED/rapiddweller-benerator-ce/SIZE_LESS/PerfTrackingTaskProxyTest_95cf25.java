@@ -1,0 +1,1 @@
+IntStream.range(0, 100).forEach(i -> assertEquals(TaskResult.EXECUTING, proxy.execute(context, ErrorHandler.getDefault())));

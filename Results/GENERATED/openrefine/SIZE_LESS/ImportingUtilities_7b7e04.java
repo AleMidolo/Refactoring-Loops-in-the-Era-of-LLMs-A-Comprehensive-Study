@@ -1,0 +1,1 @@
+tempFiles.forEach(FileItem::delete);

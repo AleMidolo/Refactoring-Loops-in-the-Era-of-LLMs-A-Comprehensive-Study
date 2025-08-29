@@ -1,0 +1,1 @@
+for (String[] strings : list) width = Math.max(width, strings[col].length());

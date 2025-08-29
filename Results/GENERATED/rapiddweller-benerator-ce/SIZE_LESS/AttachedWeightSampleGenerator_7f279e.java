@@ -1,0 +1,1 @@
+samples.forEach(sample -> sample.setWeight(1));

@@ -1,0 +1,2 @@
+validators.stream()
+    .forEach(validator -> assertTrue("'" + format(product) + "' is not valid according to " + validator + ", failed after " + validators.indexOf(validator) + " generations", validator.valid(product)));

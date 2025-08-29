@@ -1,0 +1,1 @@
+Arrays.stream(check).forEach(Assert::assertTrue);

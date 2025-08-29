@@ -1,0 +1,1 @@
+for (String s : path) profile = profile.getOrCreateSubProfile(s);

@@ -1,0 +1,1 @@
+generators.forEach(generator -> generator.init(context));

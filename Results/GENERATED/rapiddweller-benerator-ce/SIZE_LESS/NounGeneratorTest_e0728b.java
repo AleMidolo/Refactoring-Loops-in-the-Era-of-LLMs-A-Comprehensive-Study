@@ -1,0 +1,1 @@
+IntStream.range(0, 10).forEach(i -> assertNotNull(generator.generate()));

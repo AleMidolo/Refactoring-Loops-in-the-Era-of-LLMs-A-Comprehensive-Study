@@ -1,0 +1,1 @@
+components.stream().forEach(IOUtil::close);

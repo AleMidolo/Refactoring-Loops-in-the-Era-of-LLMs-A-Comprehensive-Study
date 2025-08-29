@@ -1,0 +1,1 @@
+IntStream.range(1, 4).mapToObj(i -> "v" + i).forEach(arrayNode::add);

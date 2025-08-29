@@ -1,0 +1,1 @@
+IntStream.rangeClosed(minParts, maxParts).filter(i -> (i - minParts) % partsGranularity == 0).forEach(counts::add);

@@ -1,0 +1,1 @@
+((TermedStatementEntityEdit) update).getAliases().forEach(this::scrutinize);

@@ -1,0 +1,2 @@
+IntStream.range(1, 4)
+    .forEach(i -> sb.append(getTypicalElement(i)).append(","));

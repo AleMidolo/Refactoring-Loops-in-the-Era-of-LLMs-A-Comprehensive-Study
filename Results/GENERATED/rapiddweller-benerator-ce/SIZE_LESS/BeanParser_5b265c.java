@@ -1,0 +1,1 @@
+Arrays.setAll(assignments, i -> parseProperty(propertyElements[i]));

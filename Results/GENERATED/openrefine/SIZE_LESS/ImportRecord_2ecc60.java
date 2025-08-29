@@ -1,0 +1,1 @@
+IntStream.range(0, delta).forEach(i -> add(null));

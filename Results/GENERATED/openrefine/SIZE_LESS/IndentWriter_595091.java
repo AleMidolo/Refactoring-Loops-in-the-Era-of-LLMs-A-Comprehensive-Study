@@ -1,0 +1,1 @@
+IntStream.range(0, i).forEach(j -> sb.append('\t'));

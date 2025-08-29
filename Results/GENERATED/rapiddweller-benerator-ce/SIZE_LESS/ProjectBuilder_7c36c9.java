@@ -1,0 +1,1 @@
+type.getComponents().forEach(cd -> addAttribute(cd, writer));

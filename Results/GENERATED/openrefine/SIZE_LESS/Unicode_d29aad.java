@@ -1,0 +1,1 @@
+IntStream.range(0, s.length()).forEach(i -> output[i] = s.codePointAt(i));

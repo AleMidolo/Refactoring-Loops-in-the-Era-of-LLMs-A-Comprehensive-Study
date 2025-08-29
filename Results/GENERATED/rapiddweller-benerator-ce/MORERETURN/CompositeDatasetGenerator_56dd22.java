@@ -1,0 +1,11 @@
+return getSource().getSources().stream()
+        .filter(generator -> generator instanceof DatasetBasedGenerator)
+        .map(generator -> (DatasetBasedGenerator<E>) generator)
+        .filter(dbGenerator -> dbGenerator.getDataset().equals(requestedDataset))
+        .findFirst()
+        .orElseGet(() -> getSource().getSources().stream()
+                .filter(generator -> generator instanceof CompositeDatasetGenerator)
+                .map(generator -> ((CompositeDatasetGenerator<E>) generator).getGeneratorForDataset(requestedDataset, false))
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElse(null));

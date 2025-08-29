@@ -1,0 +1,1 @@
+IntStream.range(0, 10).forEach(i -> assertEqualArrays(ALICE, GeneratorUtil.generateNonNull(generator)));

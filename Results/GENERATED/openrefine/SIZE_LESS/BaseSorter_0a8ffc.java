@@ -1,0 +1,1 @@
+Arrays.setAll(keys, i -> makeKey(project, _keyMakers[i], _criteria[i], o, index));

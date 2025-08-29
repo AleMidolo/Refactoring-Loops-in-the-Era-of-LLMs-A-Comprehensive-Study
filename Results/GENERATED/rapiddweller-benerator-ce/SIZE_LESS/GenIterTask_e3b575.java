@@ -1,0 +1,1 @@
+statements.forEach(this::addStatement);

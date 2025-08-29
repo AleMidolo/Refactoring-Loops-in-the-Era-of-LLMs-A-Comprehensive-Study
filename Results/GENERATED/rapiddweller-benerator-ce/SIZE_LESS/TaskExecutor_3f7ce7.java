@@ -1,0 +1,1 @@
+pageListeners.forEach(PageListener::pageStarting);

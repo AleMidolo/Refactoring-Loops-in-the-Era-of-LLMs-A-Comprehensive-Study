@@ -1,0 +1,1 @@
+IntStream.rangeClosed(0, n).forEach(i -> binomial[i][0] = 1);

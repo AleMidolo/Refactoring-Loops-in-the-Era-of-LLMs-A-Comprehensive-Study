@@ -1,0 +1,1 @@
+components.forEach(processor -> processor.finishConsuming(((ProductWrapper) wrapper).wrap(product)));

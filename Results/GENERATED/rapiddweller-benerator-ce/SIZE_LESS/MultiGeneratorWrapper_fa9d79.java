@@ -1,0 +1,1 @@
+sources.forEach(Generator::reset);

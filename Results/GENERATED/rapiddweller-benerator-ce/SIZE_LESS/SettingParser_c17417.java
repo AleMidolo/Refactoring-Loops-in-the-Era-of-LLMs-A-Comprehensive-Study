@@ -1,0 +1,1 @@
+Arrays.setAll(subExpressions, j -> (Expression<Object>) BeanParser.parseBeanExpression(childElements[j], false));

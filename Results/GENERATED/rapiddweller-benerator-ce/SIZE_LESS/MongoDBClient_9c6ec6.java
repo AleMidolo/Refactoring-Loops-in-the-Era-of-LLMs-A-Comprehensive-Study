@@ -1,0 +1,1 @@
+this.getDatabase(this.database).listCollectionNames().forEach(this::dropCollection);

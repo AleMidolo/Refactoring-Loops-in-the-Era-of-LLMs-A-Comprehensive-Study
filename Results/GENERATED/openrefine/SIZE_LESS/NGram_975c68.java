@@ -1,0 +1,1 @@
+IntStream.range(0, count).forEach(j -> ss[j] = tokens[i + j]);

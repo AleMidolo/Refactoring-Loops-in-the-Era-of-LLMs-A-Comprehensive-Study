@@ -1,0 +1,2 @@
+IntStream.range(0, count)
+         .forEach(i -> JSONUtilities.append(fileSelectionIndexes, i));

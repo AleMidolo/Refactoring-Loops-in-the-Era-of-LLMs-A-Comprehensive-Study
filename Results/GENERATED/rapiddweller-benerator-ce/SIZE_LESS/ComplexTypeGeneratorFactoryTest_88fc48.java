@@ -1,0 +1,1 @@
+IntStream.range(0, n).forEach(i -> counter.count(GeneratorUtil.generateNonNull(generator)));

@@ -1,0 +1,1 @@
+_lookups.entrySet().removeIf(entry -> entry.getValue().targetProjectID == projectID);

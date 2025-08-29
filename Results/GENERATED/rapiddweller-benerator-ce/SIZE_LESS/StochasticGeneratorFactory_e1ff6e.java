@@ -1,0 +1,1 @@
+Arrays.setAll(sources, i -> WrapperFactory.asStringGenerator(partGeneratorProvider.create()));

@@ -1,0 +1,1 @@
+IntStream.rangeClosed(min, max).forEach(expectedSet::add);

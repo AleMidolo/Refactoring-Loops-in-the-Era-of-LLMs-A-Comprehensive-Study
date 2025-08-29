@@ -1,0 +1,1 @@
+childGroup.getParts().forEach(component -> type.addPart(component));

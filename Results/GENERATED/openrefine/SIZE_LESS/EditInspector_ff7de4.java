@@ -1,0 +1,1 @@
+scrutinizers.values().stream().forEach(EditScrutinizer::batchIsBeginning);

@@ -1,0 +1,1 @@
+sb.append(lines.stream().collect(Collectors.joining("\n  ", "\n  ", "")));

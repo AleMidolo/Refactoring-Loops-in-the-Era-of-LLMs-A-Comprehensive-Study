@@ -1,0 +1,1 @@
+project.rows.forEach(r -> r.cells.add(0, null));

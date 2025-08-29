@@ -1,0 +1,1 @@
+subTasks.forEach(subTask -> IOUtil.close(subTask));

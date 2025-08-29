@@ -1,0 +1,1 @@
+Arrays.stream(a).forEach(i -> a[i] = _config.selection.get(i).value);

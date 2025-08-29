@@ -1,0 +1,1 @@
+IntStream.range(0, 100).forEach(i -> assertEquals(0., inducer.convert(0.)));

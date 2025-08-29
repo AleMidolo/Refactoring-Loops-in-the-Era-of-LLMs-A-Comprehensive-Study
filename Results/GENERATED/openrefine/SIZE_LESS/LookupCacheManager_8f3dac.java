@@ -1,0 +1,1 @@
+valueToRowIndices.get(valueStr).forEach(r -> rows.add(new WrappedRow(targetProject, r, targetProject.rows.get(r))));

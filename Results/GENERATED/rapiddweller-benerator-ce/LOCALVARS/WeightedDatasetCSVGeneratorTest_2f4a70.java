@@ -1,0 +1,7 @@
+IntStream.range(0, 100000)
+        .takeWhile(i -> !mueller || !garcia)
+        .mapToObj(i -> generator.generate())
+        .forEach(name -> {
+            if("Müller".equals(name)) mueller = true;
+            if("García".equals(name)) garcia = true;
+        });

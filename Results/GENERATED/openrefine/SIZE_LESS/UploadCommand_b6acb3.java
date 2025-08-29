@@ -1,0 +1,1 @@
+exceptions.forEach(e -> logger.warn(e.getLocalizedMessage(), e));

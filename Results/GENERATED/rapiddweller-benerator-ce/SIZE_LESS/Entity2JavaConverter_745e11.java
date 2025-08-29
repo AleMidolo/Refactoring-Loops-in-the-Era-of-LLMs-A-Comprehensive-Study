@@ -1,0 +1,1 @@
+IntStream.range(0, array.length).forEach(i -> result[i] = convertAny(array[i]));

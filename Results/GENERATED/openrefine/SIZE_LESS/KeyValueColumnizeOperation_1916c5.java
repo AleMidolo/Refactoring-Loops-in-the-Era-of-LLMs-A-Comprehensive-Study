@@ -1,0 +1,1 @@
+newRows.removeIf(List::isEmpty);

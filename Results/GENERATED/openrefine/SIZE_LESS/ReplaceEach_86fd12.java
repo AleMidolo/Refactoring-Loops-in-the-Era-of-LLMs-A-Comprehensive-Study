@@ -1,0 +1,1 @@
+Arrays.stream(replaceArgs).map(StringUtils::toString).toArray(String[]::new);

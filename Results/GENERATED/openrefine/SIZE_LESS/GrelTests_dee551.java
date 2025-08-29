@@ -1,0 +1,1 @@
+Arrays.stream(tests).forEach(test -> assertThrows("Expression failed to generate parse syntax error: " + test, ParsingException.class, () -> MetaParser.parse("grel:" + test)));

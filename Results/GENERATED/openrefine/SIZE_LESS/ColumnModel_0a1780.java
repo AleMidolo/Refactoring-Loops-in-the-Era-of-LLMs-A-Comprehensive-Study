@@ -1,0 +1,1 @@
+_rootColumnGroups.removeIf(group -> group.parentGroup != null);

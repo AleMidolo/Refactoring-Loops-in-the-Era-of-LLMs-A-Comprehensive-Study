@@ -1,0 +1,1 @@
+IntStream.range(0, 200000).forEach(i -> generator.addValue(i % 100));

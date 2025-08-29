@@ -1,0 +1,1 @@
+((TermedStatementEntityEdit) update).getDescriptions().stream().forEach(this::scrutinize);

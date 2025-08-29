@@ -1,0 +1,1 @@
+project.rows.forEach(row -> _removedColumns.forEach(column -> row.setCell(column.getCellIndex(), null)));

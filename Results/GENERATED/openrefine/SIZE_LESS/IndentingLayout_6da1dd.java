@@ -1,0 +1,1 @@
+IntStream.range(0, pads).forEach(i -> buffer.append(padchar));

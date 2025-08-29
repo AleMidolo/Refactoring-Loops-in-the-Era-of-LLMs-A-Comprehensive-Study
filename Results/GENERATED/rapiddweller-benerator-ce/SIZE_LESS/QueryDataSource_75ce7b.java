@@ -1,0 +1,1 @@
+iterators.stream().forEach(DataIterator::close);

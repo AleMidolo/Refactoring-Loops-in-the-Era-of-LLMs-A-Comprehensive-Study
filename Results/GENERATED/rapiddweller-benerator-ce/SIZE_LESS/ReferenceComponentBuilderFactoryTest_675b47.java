@@ -1,0 +1,1 @@
+Arrays.stream(product).forEach(element -> assertTrue("Alice".equals(element) || "Bob".equals(element)));

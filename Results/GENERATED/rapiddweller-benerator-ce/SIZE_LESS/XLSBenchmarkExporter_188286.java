@@ -1,0 +1,1 @@
+IntStream.range(1, colCount).forEach(i -> row.createCell(i).setCellStyle(style));

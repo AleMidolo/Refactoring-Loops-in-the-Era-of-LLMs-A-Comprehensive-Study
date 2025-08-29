@@ -1,0 +1,1 @@
+map.forEach(dp -> datapointMetrics.put(dp.timestamp().toString(), dp.average()));

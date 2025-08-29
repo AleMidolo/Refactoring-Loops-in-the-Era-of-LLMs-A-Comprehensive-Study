@@ -1,0 +1,1 @@
+consumerChain.getComponents().forEach(consumer -> resourceManager.addResource(consumer));

@@ -1,0 +1,34 @@
+sheets.stream()
+        .filter(sheet -> ((ObjectNode) sheet).get("fileNameAndSheetIndex").asText().split("#")[0].equals(fileSource))
+        .forEach(sheetObj -> {
+            String[] fileNameAndSheetIndex = ((ObjectNode) sheetObj).get("fileNameAndSheetIndex").asText().split("#");
+            Sheet sheet = wb.getSheetAt(Integer.parseInt(fileNameAndSheetIndex[1]));
+            int lastRow = sheet.getLastRowNum();
+
+            TableDataReader dataReader = new TableDataReader() {
+                int nextRow = 0;
+
+                @Override
+                public List<Object> getNextRowOfCells() throws IOException {
+                    if (nextRow > lastRow) {
+                        return null;
+                    }
+
+                    List<Object> cells = new ArrayList<>();
+                    Row row = sheet.getRow(nextRow++);
+                    if (row != null) {
+                        short lastCell = row.getLastCellNum();
+                        for (short cellIndex = 0; cellIndex < lastCell; cellIndex++) {
+                            Cell cell = null;
+                            Cell sourceCell = row.getCell(cellIndex);
+                            if (sourceCell != null) {
+                                cell = extractCell(sourceCell, forceText);
+                            }
+                            cells.add(cell);
+                        }
+                    }
+                    return cells;
+                }
+            };
+            TabularImportingParserBase.readTable(project, metadata, job, dataReader, fileSource + "#" + sheet.getSheetName(), limit, options, exceptions);
+});

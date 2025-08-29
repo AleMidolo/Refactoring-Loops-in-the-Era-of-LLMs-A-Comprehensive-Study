@@ -1,0 +1,1 @@
+IntStream.range(0, 3).forEach(i -> assertEquals(2 + 2 * i, ((Entity) products.get(i)).get("id")));

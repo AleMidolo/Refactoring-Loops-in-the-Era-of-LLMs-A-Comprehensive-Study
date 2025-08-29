@@ -1,0 +1,1 @@
+IntStream.range(0, genCount).forEach(i -> counter.count(generator.generate()));

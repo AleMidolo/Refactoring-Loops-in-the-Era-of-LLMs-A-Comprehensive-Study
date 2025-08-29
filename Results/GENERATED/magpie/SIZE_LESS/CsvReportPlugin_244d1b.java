@@ -1,0 +1,2 @@
+results.getIgnoredRules().stream()
+    .forEach(ignoredRule -> printer.printRecord(ignoredRule.getPolicy().getPolicyName(), null, ignoredRule.getRule().getFileName(), trimLineSeparator(ignoredRule.getRule().getRuleName()), ignoredRule.getIgnoredReason().getReason()));

@@ -1,0 +1,1 @@
+values.stream().forEach(this::addValue);

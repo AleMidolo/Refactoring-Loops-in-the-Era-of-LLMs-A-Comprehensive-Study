@@ -1,0 +1,1 @@
+components.stream().forEach(Consumer::flush);

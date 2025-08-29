@@ -1,0 +1,1 @@
+int total2 = o2.values().stream().mapToInt(Integer::intValue).sum();

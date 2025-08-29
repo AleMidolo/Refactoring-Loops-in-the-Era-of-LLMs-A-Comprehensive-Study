@@ -1,0 +1,1 @@
+platformImports.forEach(descriptor -> Importer.importPlatformParsers(descriptor, parseContext));

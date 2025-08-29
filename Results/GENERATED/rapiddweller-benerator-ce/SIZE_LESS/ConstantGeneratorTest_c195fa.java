@@ -1,0 +1,1 @@
+IntStream.range(0, 100).forEach(i -> assertNull(GeneratorUtil.generateNullable(generator)));

@@ -1,0 +1,1 @@
+_changes.forEach(change -> change.apply(project));

@@ -1,0 +1,12 @@
+IntStream.range(1, reportLines.length)
+    .mapToObj(i -> new IAMCredential(reportLines[i]))
+    .map(credential -> new MagpieAwsResource.MagpieAwsResourceBuilder(mapper, credential.arn.concat(CREDENTIALS_REPORT))
+                .withResourceName(credential.user)
+                .withResourceId(credential.arn.concat(CREDENTIALS_REPORT))
+                .withResourceType(RESOURCE_TYPE)
+                .withConfiguration(mapper.valueToTree(credential))
+                .withAccountId(account)
+                .withAwsRegion(region.toString())
+                .build()
+    )
+    .forEach(data -> emitter.emit(VersionedMagpieEnvelopeProvider.create(session, List.of(fullService() + ":credentialsReport"), data.toJsonNode()));

@@ -1,0 +1,1 @@
+Arrays.setAll(result, i -> XMLUtil.getText(docElems[i]));

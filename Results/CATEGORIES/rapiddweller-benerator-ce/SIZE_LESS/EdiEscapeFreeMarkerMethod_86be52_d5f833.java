@@ -1,0 +1,7 @@
+for (int i = 0; i < s.length(); i++) {
+    char c = s.charAt(i);
+    if (needsEscaping(c)) {
+        builder.append(escapeChar);
+    }
+    builder.append(c);
+}

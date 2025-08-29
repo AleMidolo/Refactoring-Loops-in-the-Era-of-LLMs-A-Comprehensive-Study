@@ -1,0 +1,1 @@
+samples.forEach(sample -> awSource.addSample(sample.getValue(), sample.getWeight()));

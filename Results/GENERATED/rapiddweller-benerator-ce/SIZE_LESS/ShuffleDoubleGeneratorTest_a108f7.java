@@ -1,0 +1,1 @@
+Arrays.stream(expectedProducts).forEach(expected -> assertEquals(expected, generator.generate(), 0));

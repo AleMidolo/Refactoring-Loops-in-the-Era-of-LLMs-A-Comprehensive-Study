@@ -1,0 +1,1 @@
+IntStream.range(0, 5).forEach(i -> server.enqueue(new MockResponse().setHeader("Retry-After", 1).setResponseCode(429).setBody(Integer.toString(i, 10)));

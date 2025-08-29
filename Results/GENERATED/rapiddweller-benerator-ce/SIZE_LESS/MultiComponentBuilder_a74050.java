@@ -1,0 +1,1 @@
+builders.forEach(ComponentBuilder::close);

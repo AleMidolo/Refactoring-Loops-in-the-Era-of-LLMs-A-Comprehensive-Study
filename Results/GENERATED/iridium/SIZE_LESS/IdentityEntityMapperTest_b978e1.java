@@ -1,0 +1,1 @@
+response.getTenantIds().forEach(tenantIdResponse -> assertThat(tenantIdResponse, is(equalTo(tenantId)));

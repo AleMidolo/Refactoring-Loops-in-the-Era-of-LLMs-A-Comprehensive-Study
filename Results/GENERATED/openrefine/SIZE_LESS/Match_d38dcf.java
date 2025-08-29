@@ -1,0 +1,1 @@
+IntStream.range(0, count).forEach(i -> groups[i] = matcher.group(i + 1));

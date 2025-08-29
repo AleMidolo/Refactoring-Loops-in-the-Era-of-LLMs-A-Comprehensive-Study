@@ -1,0 +1,15 @@
+compile_61_.iridium-core-server.src.main.java.software.iridium.api.service.ExternalIdentityProviderTemplateService.java
+compile_26_.iridium-core-server.src.main.java.software.iridium.api.mapper.ExternalProviderLoginDescriptorResponseMapper.java
+compile_28_.iridium-core-server.src.main.java.software.iridium.api.instantiator.ParameterHashMapInstantiator.java
+compile_29_.iridium-core-server.src.main.java.software.iridium.api.instantiator.IdentityPropertyEntityInstantiator.java
+compile_34_.iridium-core-server.src.main.java.software.iridium.api.mapper.IdentityEntityMapper.java
+compile_37_.iridium-tracker.src.main.java.software.iridium.tracker.mapper.ProviderCountResponseMapper.java
+compile_39_.iridium-cli.src.main.java.software.iridium.cli.generator.IdentityProviderTemplateGenerator.java
+compile_43_.iridium-cli.src.main.java.software.iridium.cli.generator.IdentityProviderTemplateGenerator.java
+compile_45_.iridium-cli.src.main.java.software.iridium.cli.generator.IdentityProviderGenerator.java
+compile_53_.iridium-cli.src.main.java.software.iridium.cli.generator.IdentityProviderGenerator.java
+compile_61_.iridium-core-server.src.test.java.software.iridium.api.mapper.IdentityEntityMapperTest.java
+compile_65_.iridium-core-server.src.test.java.software.iridium.api.mapper.IdentityEntityMapperTest.java
+compile_37_.iridium-cli.src.main.java.software.iridium.cli.generator.IdentityProviderTemplateGenerator.java
+compile_105_.iridium-tracker.src.test.java.software.iridium.tracker.mapper.ProviderCountResponseMapperTest.java
+compile_63_.iridium-core-server.src.test.java.software.iridium.api.mapper.TenantSummaryMapperTest.java

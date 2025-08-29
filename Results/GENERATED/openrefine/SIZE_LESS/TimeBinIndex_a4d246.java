@@ -1,0 +1,1 @@
+Arrays.stream(allValues).mapToLong(d -> Math.max((d - _min) / _step, 0)).forEach(bin -> _bins[(int) bin]++);

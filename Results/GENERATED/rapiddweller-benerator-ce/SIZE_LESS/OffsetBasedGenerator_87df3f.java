@@ -1,0 +1,1 @@
+IntStream.range(0, offset).forEach(i -> super.generate(wrapper));

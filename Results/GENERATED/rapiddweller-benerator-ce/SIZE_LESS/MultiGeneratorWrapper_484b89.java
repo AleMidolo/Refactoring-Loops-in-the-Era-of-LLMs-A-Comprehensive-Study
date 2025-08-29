@@ -1,0 +1,1 @@
+sources.stream().allMatch(source -> source.isThreadSafe());

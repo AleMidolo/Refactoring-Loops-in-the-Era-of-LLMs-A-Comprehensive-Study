@@ -1,0 +1,1 @@
+Arrays.stream(tests).forEach(test -> parseEval(bindings, test));

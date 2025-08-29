@@ -1,0 +1,1 @@
+IntStream.range(0, 5).forEach(i -> server.enqueue(new MockResponse().setResponseCode(503).setBody(Integer.toString(i, 10)));

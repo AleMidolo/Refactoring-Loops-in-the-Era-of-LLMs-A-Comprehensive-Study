@@ -1,0 +1,3 @@
+List<Column> newColumns = project.columnModel.columns.stream()
+    .map(c -> new Column(c.getCellIndex() + 1, c.getName()))
+    .collect(Collectors.toList());

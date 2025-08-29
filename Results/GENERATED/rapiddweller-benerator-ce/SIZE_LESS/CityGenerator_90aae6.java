@@ -1,0 +1,1 @@
+state.getCities().forEach(generator::addValue);

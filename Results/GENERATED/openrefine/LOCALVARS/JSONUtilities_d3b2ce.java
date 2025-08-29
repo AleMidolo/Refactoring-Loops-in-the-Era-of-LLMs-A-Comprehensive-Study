@@ -1,0 +1,1 @@
+IntStream.range(0, a.size()).forEach(i -> r[i] = a.get(i).asInt());

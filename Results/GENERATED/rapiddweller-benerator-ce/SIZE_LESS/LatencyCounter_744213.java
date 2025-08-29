@@ -1,0 +1,1 @@
+Arrays.stream(percentiles).forEach(percentile -> out.println(percentile + "%:     " + percentileLatency(percentile)));

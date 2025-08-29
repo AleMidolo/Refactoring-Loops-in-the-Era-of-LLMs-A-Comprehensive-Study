@@ -1,0 +1,1 @@
+IntStream.range(0, 4).forEach(i -> assertEquals("Berlin", cityNodes.item(i).getTextContent()));

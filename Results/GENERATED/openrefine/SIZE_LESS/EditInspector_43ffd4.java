@@ -1,0 +1,1 @@
+scrutinizers.values().forEach(s -> s.batchIsFinished());

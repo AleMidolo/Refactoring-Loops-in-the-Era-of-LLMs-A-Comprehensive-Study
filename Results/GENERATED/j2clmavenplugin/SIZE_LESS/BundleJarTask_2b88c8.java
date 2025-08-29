@@ -1,0 +1,1 @@
+input.getFilesAndHashes().forEach(entry -> copiedOutputPath(outputDir.toPath(), entry));

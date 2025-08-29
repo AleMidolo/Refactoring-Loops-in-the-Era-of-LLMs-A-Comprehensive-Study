@@ -1,0 +1,1 @@
+map.entrySet().forEach(entry -> entity.setComponent((String) entry.getKey(), entry.getValue()));

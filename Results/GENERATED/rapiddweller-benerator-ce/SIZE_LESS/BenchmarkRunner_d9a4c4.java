@@ -1,0 +1,1 @@
+config.getBenchmarks().forEach(benchmark -> runBenchmark(benchmark, result));

@@ -1,0 +1,1 @@
+steps.forEach(step -> step.init(context));

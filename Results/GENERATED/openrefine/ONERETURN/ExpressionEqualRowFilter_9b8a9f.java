@@ -1,0 +1,1 @@
+return ExpressionUtils.toObjectCollection(value).stream().anyMatch(this::testValue);

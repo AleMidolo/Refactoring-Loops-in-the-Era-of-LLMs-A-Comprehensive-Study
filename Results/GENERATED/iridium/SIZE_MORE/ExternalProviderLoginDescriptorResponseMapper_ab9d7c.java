@@ -1,0 +1,12 @@
+providers.stream()
+        .map(provider -> {
+            ExternalProviderLoginDescriptorResponse response = new ExternalProviderLoginDescriptorResponse();
+            response.setScope(provider.getScope());
+            response.setClientId(provider.getClientId());
+            response.setIconPath(provider.getIconPath());
+            response.setResponseType("code");
+            response.setName(provider.getName());
+            response.setDisplayName(provider.getDisplayName());
+            return response;
+        })
+        .forEach(responses::add);

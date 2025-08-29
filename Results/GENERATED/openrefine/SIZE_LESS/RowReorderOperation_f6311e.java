@@ -1,0 +1,1 @@
+record.indices = IntStream.range(record.fromRowIndex, record.toRowIndex).boxed().collect(Collectors.toList());

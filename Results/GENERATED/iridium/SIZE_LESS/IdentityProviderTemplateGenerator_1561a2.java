@@ -1,0 +1,1 @@
+externalProviderTemplate.getAuthorizationParameters().forEach(authorizationParam -> authorizationParam.setProvider(externalProviderTemplate));

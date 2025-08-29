@@ -1,0 +1,1 @@
+Arrays.setAll(result, i -> new ExecutionMode(true, set.stream().toArray()[i]));

@@ -1,0 +1,1 @@
+sourceValue.getComponents().entrySet().forEach(entry -> map.put(entry.getKey(), entry.getValue()));

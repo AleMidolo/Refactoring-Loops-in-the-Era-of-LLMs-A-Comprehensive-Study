@@ -1,0 +1,1 @@
+columns.forEach(Column::clearPrecomputes);

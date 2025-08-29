@@ -1,0 +1,1 @@
+steps.stream().forEach(GenerationStep::reset);

@@ -1,0 +1,1 @@
+record.rows.subList(record.fromRowIndex, record.toRowIndex).stream().forEach(r -> visit(project, r, r, project.rows.get(r)));

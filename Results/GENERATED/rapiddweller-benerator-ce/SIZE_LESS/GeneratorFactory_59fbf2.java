@@ -1,0 +1,1 @@
+samples.forEach(sample -> generator.addSample(sample.getValue(), sample.getWeight()));

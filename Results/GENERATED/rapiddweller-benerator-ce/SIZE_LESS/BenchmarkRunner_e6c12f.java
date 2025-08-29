@@ -1,0 +1,1 @@
+Arrays.stream(generatedFiles).forEach(FileUtil::deleteIfExists);

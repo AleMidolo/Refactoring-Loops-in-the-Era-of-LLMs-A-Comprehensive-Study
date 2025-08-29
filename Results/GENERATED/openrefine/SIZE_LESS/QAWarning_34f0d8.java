@@ -1,0 +1,1 @@
+properties.entrySet().forEach(entry -> merged.setProperty(entry.getKey(), entry.getValue()));

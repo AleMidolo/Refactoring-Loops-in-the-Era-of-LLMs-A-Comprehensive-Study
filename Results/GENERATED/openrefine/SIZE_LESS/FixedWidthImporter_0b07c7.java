@@ -1,0 +1,1 @@
+IntStream.range(0, counts.length).forEach(c -> counts[c] = 0);

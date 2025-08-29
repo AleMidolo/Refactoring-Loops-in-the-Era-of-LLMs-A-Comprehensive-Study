@@ -1,0 +1,1 @@
+entries.forEach(entry -> recursivelyDeleteDir(entry));

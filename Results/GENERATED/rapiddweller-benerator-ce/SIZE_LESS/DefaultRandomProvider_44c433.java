@@ -1,0 +1,2 @@
+IntStream.range(0, sampleCount)
+    .forEach(i -> probSum[i] /= (float) sum);

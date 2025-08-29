@@ -1,0 +1,1 @@
+map.forEach((key, value) -> datapointMetrics.put(key.timestamp().toString(), key.sum()));

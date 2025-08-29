@@ -1,0 +1,1 @@
+updates.forEach(this::splitUpdate);

@@ -1,0 +1,1 @@
+template.getAccessTokenParameters().forEach(accessTokenParam -> accessTokenParamHashMap.put(accessTokenParam.getName(), accessTokenParam.getValue()));

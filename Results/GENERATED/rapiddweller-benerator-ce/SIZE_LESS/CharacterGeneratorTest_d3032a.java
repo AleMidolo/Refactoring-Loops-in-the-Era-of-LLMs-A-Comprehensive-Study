@@ -1,0 +1,1 @@
+IntStream.rangeClosed('A', 'Z').mapToObj(c -> (char) c).forEach(expectedSet::add);

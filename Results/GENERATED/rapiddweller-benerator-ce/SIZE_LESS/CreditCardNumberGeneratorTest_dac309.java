@@ -1,0 +1,1 @@
+IntStream.range(0, 10).forEach(i -> assertTrue(validator.isValid(generator.generate(), null));

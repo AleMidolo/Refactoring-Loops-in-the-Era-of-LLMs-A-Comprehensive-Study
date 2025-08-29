@@ -1,0 +1,1 @@
+Arrays.stream(searchArgs).map(StringUtils::toString).toArray(String[]::new);

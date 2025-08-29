@@ -1,0 +1,1 @@
+descriptor.getClassesToImport().forEach(cls -> context.importClass(cls));

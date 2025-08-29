@@ -1,0 +1,1 @@
+IntStream.rangeClosed(10, 13).forEach(counter::addSample);

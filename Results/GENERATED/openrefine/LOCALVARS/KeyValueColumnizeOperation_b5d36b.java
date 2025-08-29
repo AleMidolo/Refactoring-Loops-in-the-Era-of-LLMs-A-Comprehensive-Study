@@ -1,0 +1,85 @@
+oldRows.stream()
+        .filter(oldRow -> !ExpressionUtils.isNonBlankData(oldRow.getCellValue(keyColumn.getCellIndex())))
+        .forEach(oldRow -> {
+            if (unchangedColumns.isEmpty()) {
+                reusableRow = new Row(newColumns.size());
+                newRows.add(reusableRow);
+                currentRows.clear();
+                currentRows.add(reusableRow);
+            } else {
+                newRows.add(buildNewRow(unchangedColumns, oldRow, unchangedColumns.size()));
+            }
+        });
+
+oldRows.stream()
+        .filter(oldRow -> ExpressionUtils.isNonBlankData(oldRow.getCellValue(keyColumn.getCellIndex())))
+        .forEach(oldRow -> {
+            String keyString = oldRow.getCellValue(keyColumn.getCellIndex()).toString();
+            if (keyString.equals(recordKey) || recordKey == null) {
+                reusableRow = new Row(newColumns.size());
+                newRows.add(reusableRow);
+                currentRows.clear();
+                currentRows.add(reusableRow);
+            }
+
+            Column newColumn = keyValueToColumn.get(keyString);
+            if (newColumn == null) {
+                newColumn = new Column(project.columnModel.allocateNewCellIndex(), project.columnModel.getUnduplicatedColumnName(keyString));
+                keyValueToColumn.put(keyString, newColumn);
+                newColumns.add(newColumn);
+                if (recordKey == null) {
+                    recordKey = keyString;
+                }
+            }
+
+            if (unchangedColumns.size() > 0) {
+                String unchangedCellValues = IntStream.range(0, unchangedColumns.size())
+                        .mapToObj(c -> {
+                            Column unchangedColumn = unchangedColumns.get(c);
+                            Object cellValue = oldRow.getCellValue(unchangedColumn.getCellIndex());
+                            if (c > 0) {
+                                return '\0' + (cellValue != null ? cellValue.toString() : "");
+                            } else {
+                                return cellValue != null ? cellValue.toString() : "";
+                            }
+                        })
+                        .collect(Collectors.joining());
+
+                reusableRow = groupByCellValuesToRow.get(unchangedCellValues);
+                if (reusableRow == null || reusableRow.getCellValue(valueColumn.getCellIndex()) != null) {
+                    reusableRow = buildNewRow(unchangedColumns, oldRow, newColumn.getCellIndex() + 1);
+                    groupByCellValuesToRow.put(unchangedCellValues, reusableRow);
+                    newRows.add(reusableRow);
+                }
+            }
+
+            Cell cell = oldRow.getCell(valueColumn.getCellIndex());
+            if (unchangedColumns.size() == 0) {
+                int index = newColumn.getCellIndex();
+                Row row = getAvailableRow(currentRows, newRows, index);
+                row.setCell(index, cell);
+            } else {
+                reusableRow.setCell(newColumn.getCellIndex(), cell);
+            }
+
+            if (noteColumn != null) {
+                Object noteValue = oldRow.getCellValue(noteColumn.getCellIndex());
+                if (ExpressionUtils.isNonBlankData(noteValue)) {
+                    String keyNoteString = noteColumn.getName() + " : " + keyString;
+                    Column newNoteColumn = keyValueToNoteColumn.get(keyString);
+                    if (newNoteColumn == null) {
+                        newNoteColumn = new Column(project.columnModel.allocateNewCellIndex(), project.columnModel.getUnduplicatedColumnName(keyNoteString));
+                        keyValueToNoteColumn.put(keyString, newNoteColumn);
+                        newNoteColumns.add(newNoteColumn);
+                    }
+                    int newNoteCellIndex = newNoteColumn.getCellIndex();
+                    Object existingNewNoteValue = reusableRow.getCellValue(newNoteCellIndex);
+                    if (ExpressionUtils.isNonBlankData(existingNewNoteValue)) {
+                        Cell concatenatedNoteCell = new Cell(existingNewNoteValue.toString() + ";" + noteValue.toString(), null);
+                        reusableRow.setCell(newNoteCellIndex, concatenatedNoteCell);
+                    } else {
+                        reusableRow.setCell(newNoteCellIndex, oldRow.getCell(noteColumn.getCellIndex()));
+                    }
+                }
+            }
+        });

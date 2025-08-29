@@ -1,0 +1,1 @@
+Arrays.stream(_changes).forEach(change -> change.revert(project));

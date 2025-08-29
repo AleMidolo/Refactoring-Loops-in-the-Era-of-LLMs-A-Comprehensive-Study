@@ -1,0 +1,1 @@
+IntStream.range(0, 3).forEach(i -> checkGeneration(generator));

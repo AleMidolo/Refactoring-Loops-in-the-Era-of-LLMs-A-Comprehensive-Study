@@ -1,0 +1,1 @@
+IntStream.rangeClosed(25, 125).filter(i -> i % 25 == 0).forEach(counter::addSample);

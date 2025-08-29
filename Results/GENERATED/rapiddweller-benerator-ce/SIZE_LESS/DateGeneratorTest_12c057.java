@@ -1,0 +1,1 @@
+IntStream.range(0, 1000).forEach(i -> assertTrue(dateGenerator.generate().compareTo(maxDate) <= 0));

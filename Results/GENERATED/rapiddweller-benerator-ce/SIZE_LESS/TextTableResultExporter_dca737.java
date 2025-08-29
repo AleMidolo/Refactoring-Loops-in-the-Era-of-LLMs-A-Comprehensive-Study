@@ -1,0 +1,1 @@
+IntStream.range(1, cols).forEach(i -> alignments[i] = Alignment.RIGHT);

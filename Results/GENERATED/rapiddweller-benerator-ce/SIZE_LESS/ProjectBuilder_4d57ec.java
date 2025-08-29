@@ -1,0 +1,1 @@
+component.getDetails().forEach(detail -> format(detail, attributes));

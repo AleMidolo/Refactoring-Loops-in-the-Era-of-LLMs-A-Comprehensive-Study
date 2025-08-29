@@ -1,0 +1,1 @@
+Arrays.stream(formats).forEach(rankedFormats::add);

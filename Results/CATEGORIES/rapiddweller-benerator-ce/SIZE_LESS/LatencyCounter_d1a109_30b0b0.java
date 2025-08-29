@@ -1,0 +1,1 @@
+for (long value = (long) latency + 1; value <= maxLatency; value++) count += getLatencyCount(value);

@@ -1,0 +1,1 @@
+profile.getSubProfiles().forEach(subProfile -> printRecursively(subProfile, indent + "  "));

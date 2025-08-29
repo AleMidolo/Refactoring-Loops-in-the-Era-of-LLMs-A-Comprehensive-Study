@@ -1,0 +1,1 @@
+IntStream.range(0, _columnNames.size()).forEach(i -> project.columnModel.columns.remove(_columnInsertIndex));

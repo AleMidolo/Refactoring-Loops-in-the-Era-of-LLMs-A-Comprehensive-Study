@@ -1,0 +1,1 @@
+builder.append(chars.stream().collect(StringBuilder::new, StringBuilder::append, StringBuilder::append));

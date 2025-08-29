@@ -1,0 +1,1 @@
+r.getSnakGroups().forEach(g -> translateSnakGroup(g, true, writer));

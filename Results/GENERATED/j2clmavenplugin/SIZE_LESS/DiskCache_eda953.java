@@ -1,0 +1,1 @@
+entries.forEach(entry -> deleteRecursively(entry));

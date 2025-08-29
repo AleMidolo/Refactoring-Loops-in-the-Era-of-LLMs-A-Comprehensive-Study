@@ -1,0 +1,1 @@
+IntStream.range(0, 3).forEach(i -> checkGeneration((Entity) GeneratorUtil.generateNonNull(generator), i + 1));

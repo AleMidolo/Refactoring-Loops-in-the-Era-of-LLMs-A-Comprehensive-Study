@@ -1,0 +1,1 @@
+IntStream.range(0, lastNonBlankRowsByGroup.length).forEach(i -> lastNonBlankRowsByGroup[i] = -1);

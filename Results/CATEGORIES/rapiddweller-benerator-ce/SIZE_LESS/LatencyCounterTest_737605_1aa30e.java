@@ -1,0 +1,1 @@
+for (int i = 10; i <= 13; i++) counter.addSample(i);

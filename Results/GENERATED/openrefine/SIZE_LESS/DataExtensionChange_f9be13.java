@@ -1,0 +1,5 @@
+IntStream.range(0, rowCount)
+    .forEach(r -> IntStream.range(0, columnNames.size())
+        .forEach(c -> {
+            line = reader.readLine();
+        }));

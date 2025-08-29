@@ -1,0 +1,1 @@
+scopes.forEach(scoped -> scoped.setResetNeeded(true));

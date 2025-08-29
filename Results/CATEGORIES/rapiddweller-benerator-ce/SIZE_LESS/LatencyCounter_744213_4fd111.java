@@ -1,0 +1,1 @@
+for (int percentile : percentiles) out.println(percentile + "%:     " + percentileLatency(percentile));

@@ -1,0 +1,1 @@
+int total1 = o1.values().stream().mapToInt(i -> i).sum();

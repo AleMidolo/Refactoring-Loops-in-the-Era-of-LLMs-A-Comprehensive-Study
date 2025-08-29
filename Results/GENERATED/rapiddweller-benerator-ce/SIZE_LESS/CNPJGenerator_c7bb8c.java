@@ -1,0 +1,1 @@
+IntStream.range(0, 8).forEach(i -> digits.add(random.nextInt(9)));

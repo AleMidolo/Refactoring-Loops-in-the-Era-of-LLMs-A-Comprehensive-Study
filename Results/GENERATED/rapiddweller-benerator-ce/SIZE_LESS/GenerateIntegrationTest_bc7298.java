@@ -1,0 +1,1 @@
+IntStream.range(0, 3).forEach(i -> assertNull(((Entity) consumer.getProducts().get(0)).get("id")));

@@ -1,0 +1,1 @@
+statementGroupUpdate.getStatementEdits().forEach(s -> update.addStatement(s));
