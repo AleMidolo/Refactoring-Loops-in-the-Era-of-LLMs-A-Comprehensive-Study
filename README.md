@@ -10,6 +10,7 @@ The replication package consists of the following directories and files:
 
 - **Results/**: contains all the results of the study, including code and output files.
 - **src/**: contains all the Java files used to conduct the experiment.
+- **target/**: contains the javadoc of the project
 - **main.py**: contains the code that interacts with the GPT model to perform the refactoring.
 - **pom.xml**: the Maven configuration file for the Java section of the experiment.
 - **repositories.txt**: a text file listing the repositories analyzed.
