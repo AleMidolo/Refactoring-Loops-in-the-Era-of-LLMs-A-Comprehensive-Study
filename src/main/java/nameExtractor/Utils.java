@@ -13,6 +13,11 @@ import com.github.javaparser.ast.stmt.ForEachStmt;
 import com.github.javaparser.ast.stmt.ForStmt;
 import com.github.javaparser.ast.stmt.Statement;
 
+
+/**
+ * General utility methods for file handling, directory management, and
+ * analyzing Java statements using JavaParser.
+ */
 public class Utils{
     /**
      * Reads a file and returns all lines as a set of strings.

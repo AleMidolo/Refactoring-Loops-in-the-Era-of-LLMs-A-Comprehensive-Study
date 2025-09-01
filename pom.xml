@@ -12,6 +12,30 @@
       <maven.compiler.release>23</maven.compiler.release>
   </properties>
 
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>nameExtractor.MainClass</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version> <!-- use latest -->
+                <configuration>
+                    <source>17</source> <!-- your Java version -->
+                    <encoding>UTF-8</encoding>
+                    <show>private</show> <!-- optional, shows private members -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
   <dependencies>
     <dependency>
         <groupId>com.github.javaparser</groupId>

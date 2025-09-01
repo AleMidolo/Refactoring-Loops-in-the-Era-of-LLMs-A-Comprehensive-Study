@@ -1,0 +1,53 @@
+@options
+@packages
+-classpath
+'C:/Users/Ale-m/.m2/repository/com/github/javaparser/javaparser-core/3.24.0/javaparser-core-3.24.0.jar;C:/Users/Ale-m/.m2/repository/com/github/javaparser/javaparser-symbol-solver-core/3.24.0/javaparser-symbol-solver-core-3.24.0.jar;C:/Users/Ale-m/.m2/repository/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar;C:/Users/Ale-m/.m2/repository/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar;C:/Users/Ale-m/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar;C:/Users/Ale-m/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/Ale-m/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/Ale-m/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar;C:/Users/Ale-m/.m2/repository/com/google/errorprone/error_prone_annotations/2.7.1/error_prone_annotations-2.7.1.jar;C:/Users/Ale-m/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar;C:/Users/Ale-m/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar'
+-encoding
+'UTF-8'
+-private
+--release
+23
+-sourcepath
+'C:/Users/Ale-m/Desktop/Universita/Projects/RepositoryMining/Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Ale-m/Desktop/Universita/Projects/RepositoryMining/Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'nameExtractor 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'nameExtractor 0.0.1-SNAPSHOT API'
+nameExtractor
+C:\Users\Ale-m\.m2\repository\com\github\javaparser\javaparser-core\3.24.0\javaparser-core-3.24.0.jar = 1649251367737
+C:\Users\Ale-m\.m2\repository\com\github\javaparser\javaparser-symbol-solver-core\3.24.0\javaparser-symbol-solver-core-3.24.0.jar = 1649251367505
+C:\Users\Ale-m\.m2\repository\org\javassist\javassist\3.28.0-GA\javassist-3.28.0-GA.jar = 1649251367682
+C:\Users\Ale-m\.m2\repository\com\google\guava\guava\31.0.1-jre\guava-31.0.1-jre.jar = 1649251368058
+C:\Users\Ale-m\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar = 1649251367260
+C:\Users\Ale-m\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1649251367480
+C:\Users\Ale-m\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar = 1649251367770
+C:\Users\Ale-m\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar = 1649251367891
+C:\Users\Ale-m\.m2\repository\com\google\errorprone\error_prone_annotations\2.7.1\error_prone_annotations-2.7.1.jar = 1649251367990
+C:\Users\Ale-m\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar = 1649251368038
+C:\Users\Ale-m\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar = 1649251368441
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\src\main\java = 1756473734389
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\allclasses-index.html = 1756723374206
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\allpackages-index.html = 1756723374211
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\element-list = 1756723374019
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\help-doc.html = 1756723374284
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\index-all.html = 1756723374253
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\index.html = 1756723374266
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\javadoc.bat = 1756723291286
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\member-search-index.js = 1756723374222
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\module-search-index.js = 1756723374215
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\overview-tree.html = 1756723374153
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\package-search-index.js = 1756723374218
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\search.html = 1756723374258
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\tag-search-index.js = 1756723374225
+C:\Users\Ale-m\Desktop\Universita\Projects\RepositoryMining\Refactoring-Loops-in-the-Era-of-LLMs-A-Comprehensive-Study\target\site\apidocs\type-search-index.js = 1756723374220

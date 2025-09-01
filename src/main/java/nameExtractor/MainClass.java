@@ -28,41 +28,99 @@ import static nameExtractor.ParsingUtils.*;
 import static nameExtractor.Utils.*;
 import static nameExtractor.MavenUtils.*;
 
-
+/**
+ * Main entry point for the Name Extractor application.
+ * <p>
+ * This class reads a list of Java repositories, optionally performs code refactoring,
+ * and collects statistics about code elements (like variable names and loops) using JavaParser.
+ * </p>
+ * <p>
+ * Usage: <code>java MainClass &lt;r&gt;</code>  
+ * Where <code>&lt;r&gt;</code> = 0 (no refactoring) or 1 (perform refactoring)
+ * </p>
+ * 
+ * @author 
+ */
 public class MainClass {
 	
-	// Base project directory (relative to current working directory)
-	public static String baseDirectory = System.getProperty("user.dir");
+    /** Base directory of the project (defaults to the current working directory) */
+    public static String baseDirectory = System.getProperty("user.dir");
 
-	// Subdirectories
-	public static String repositoriesDirectory = baseDirectory + File.separator + "AnalyzedRepositories";
-	public static String streamDirectory = baseDirectory + File.separator + "Results" + File.separator + "GENERATED";
-	public static String printPath = "";
-	public static String repoName = "";
-	public static String repoSingleName = "";
+    /** Directory where repositories are stored for analysis */
+    public static String repositoriesDirectory = baseDirectory + File.separator + "AnalyzedRepositories";
 
-	// Counters for statistics
-	public static AtomicInteger less = new AtomicInteger(0);
-	public static AtomicInteger more = new AtomicInteger(0);
-	public static AtomicInteger count = new AtomicInteger(0);
+    /** Directory where results (e.g., generated files) are stored */
+    public static String streamDirectory = baseDirectory + File.separator + "Results" + File.separator + "GENERATED";
 
-	public static void main(String[] args) throws IOException {
+    /** Path used for printing results (set dynamically during processing) */
+    public static String printPath = "";
 
-		// Read repository names from file
-		HashSet<String> repos = readMethodsFromFile(Paths.get(baseDirectory + "\\repositories.txt"));
+    /** Full repository name currently being processed */
+    public static String repoName = "";
 
-		// Process each repository
-		for (String repo : repos) {
-			processRepository(repo);
-		}
-	}
+    /** Repository name without suffixes or extra info */
+    public static String repoSingleName = "";
 
-	/**
+    /** Counter for statistics: number of items below a certain threshold */
+    public static AtomicInteger less = new AtomicInteger(0);
+
+    /** Counter for statistics: number of items above a certain threshold */
+    public static AtomicInteger more = new AtomicInteger(0);
+
+    /** General counter for processed elements */
+    public static AtomicInteger count = new AtomicInteger(0);
+
+    /**
+     * Main method to start the application.
+     * The program expects one argument:
+     * <ul>
+     *     <li><code>0</code> – do not perform refactoring</li>
+     *     <li><code>1</code> – perform refactoring</li>
+     * </ul>
+     * After validating the argument, it reads the list of repositories from
+     * <code>repositories.txt</code> and processes each repository. 
+     *
+     * @param args command-line arguments (expects exactly one: the refactoring flag)
+     * @throws IOException if reading the repository list fails
+     */
+    public static void main(String[] args) throws IOException {
+        // Check if the user provided the required argument
+        if (args.length < 1) {
+            System.err.println("Usage: java MainClass <r>");
+            System.err.println("<r> = 0 (no refactoring) or 1 (perform refactoring)");
+            System.exit(1);
+        }
+
+        int r;
+        try {
+            r = Integer.parseInt(args[0]);
+            if (r != 0 && r != 1) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid argument for 'r'. Must be 0 or 1.");
+            System.exit(1);
+            return; // just to satisfy compiler
+        }
+
+        System.out.println("Refactoring flag: " + r);
+
+        // Read repository names from repositories.txt into a HashSet
+        HashSet<String> repos = readMethodsFromFile(Paths.get(baseDirectory + "\\repositories.txt"));
+
+        // Process each repository individually
+        for (String repo : repos) {
+            processRepository(repo, r); // 'r' indicates whether to perform refactoring
+        }
+    }
+
+/**
 	 * Processes a single repository: parses files, extracts loops, categorizes and refactors.
 	 *
 	 * @param repo Repository name.
+	 * @param r Refactoring flag (0 = just inspect repo, 1 = perform refactoring).
 	 */
-	private static void processRepository(String repo) {
+	private static void processRepository(String repo, int r) {
 		repoSingleName = repo;
 		repoName = repositoriesDirectory + "\\" + repo;
 
@@ -79,27 +137,29 @@ public class MainClass {
 
 		try {
 			System.out.println("Analysis started");
+			if (r == 0){
+				parseResult.forEach(pr -> {
+					CompilationUnit cu = pr.b;
+					String absolutePath = pr.a.replace(repoName, "");
 
-			parseResult.forEach(pr -> {
-				CompilationUnit cu = pr.b;
-				String absolutePath = pr.a.replace(repoName, "");
+					// Generate a safe filename for categorization
+					String filename = absolutePath.replace("\\", ".").replace(":", "");
 
-				// Generate a safe filename for categorization
-				String filename = absolutePath.replace("\\", ".").replace(":", "");
+					// Extract loops
+					HashSet<ForStmt> classicFor = Visitors.extractForStmt(cu);
+					HashSet<ForEachStmt> advancedFor = Visitors.extractForEachStmt(cu);
 
-				// Extract loops
-				HashSet<ForStmt> classicFor = Visitors.extractForStmt(cu);
-				HashSet<ForEachStmt> advancedFor = Visitors.extractForEachStmt(cu);
+					forStmts.addAll(classicFor);
+					forEachStmts.addAll(advancedFor);
 
-				forStmts.addAll(classicFor);
-				forEachStmts.addAll(advancedFor);
-
-				// Categorize loops based on your rules
-				categorizeFor(filename, classicFor, advancedFor);
-			});
-
-			// Apply refactoring to all extracted loops, this step should be done after the for loop are refactored with the LLM model
-			refactorFor();
+					// Categorize loops based on your rules
+					categorizeFor(filename, classicFor, advancedFor);
+				});
+			}
+			else {
+				// Apply refactoring to all extracted loops, this step should be done after the for loop are refactored with the LLM model
+				refactorFor();
+			}
 
 			System.out.println("Analysis terminated! \nNow you can check methods informations..");
 
@@ -111,7 +171,6 @@ public class MainClass {
 		// Print summary statistics
 		printRepositoryStatistics(forStmts.size(), forEachStmts.size());
 	}
-
 	/**
 	 * Prints loop analysis summary for a repository.
 	 *
@@ -131,9 +190,6 @@ public class MainClass {
 	 * Refactors Java for-loops and for-each statements in source files using provided transformation data.
 	 * Reads compilable files, locates target statements by line number, replaces them with the transformed code,
 	 * and attempts to compile them while preserving the original files.
-	 *
-	 * @param forStmts List to store processed traditional for statements (currently unused in this method)
-	 * @param forEachStmts List to store processed for-each statements (currently unused in this method)
 	 */
 	private static void refactorFor() {
 		try (Stream<Path> paths = Files.walk(Paths.get(streamDirectory))) {

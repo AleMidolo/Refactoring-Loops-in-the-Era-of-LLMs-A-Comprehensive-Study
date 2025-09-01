@@ -21,12 +21,24 @@ import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeS
 import com.github.javaparser.utils.Pair;
 import com.github.javaparser.utils.SourceRoot;
 
+/**
+ * Utility class providing methods to parse Java source files, configure
+ * symbol solving, and discover package directories for a project.
+ * Includes:
+ * <ul>
+ *     <li>Parsing Java files into CompilationUnits</li>
+ *     <li>Configuring CombinedTypeSolver with reflection and source packages</li>
+ *     <li>Finding package directories containing Java files</li>
+ * </ul>
+ */
 public class ParsingUtils {
-        /**
-     * Parses all Java files in a directory and returns a list of pairs: file path and CompilationUnit.
+
+    /**
+     * Parses all Java files in a given root directory and returns a list of pairs
+     * containing the absolute file path and the corresponding CompilationUnit.
      *
-     * @param directory The root directory containing Java source files.
-     * @return List of Pair<AbsolutePath, CompilationUnit> for all successfully parsed files.
+     * @param directory the root directory containing Java source files
+     * @return a list of Pair (String, CompilationUnit) representing each successfully parsed file
      */
     public static List<Pair<String, CompilationUnit>> parse(String directory) {
         HashSet<String> packagePaths = findPackageDirectories(directory);
@@ -67,10 +79,11 @@ public class ParsingUtils {
     }
 
     /**
-     * Configures a CombinedTypeSolver with Reflection and source directories.
+     * Configures a CombinedTypeSolver for symbol resolution using the standard
+     * JDK classes and the given set of package directories.
      *
-     * @param packagePaths Set of package paths for JavaParserTypeSolver.
-     * @return CombinedTypeSolver configured with all dependencies.
+     * @param packagePaths a set of package directory paths containing Java source files
+     * @return a CombinedTypeSolver configured with reflection and source directories
      */
     public static CombinedTypeSolver configureSymbolSolver(HashSet<String> packagePaths) {
         CombinedTypeSolver combinedSolver = new CombinedTypeSolver();
@@ -93,10 +106,10 @@ public class ParsingUtils {
     }
 
     /**
-     * Finds all unique package directories containing Java files under a root directory.
+     * Finds all unique package directories containing Java files under a specified root directory.
      *
-     * @param rootPath Root directory to search for Java files.
-     * @return Set of package directories.
+     * @param rootPath the root directory to search for Java files
+     * @return a HashSet of package directory paths
      */
     public static HashSet<String> findPackageDirectories(String rootPath) {
         System.out.println("Starting package search...");
@@ -122,9 +135,9 @@ public class ParsingUtils {
     /**
      * Extracts the directory path of a Java file’s package.
      *
-     * @param javaFile Path to a Java source file.
-     * @param rootPath Root directory of the project.
-     * @return Path to the package directory containing the file, or empty string if not found.
+     * @param javaFile the path to a Java source file
+     * @param rootPath the root directory of the project
+     * @return the path to the package directory containing the file, or an empty string if not found
      */
     private static String extractPackageDirectory(Path javaFile, String rootPath) {
         try {
